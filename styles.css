@@ -4,7 +4,8 @@
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
   --dark-blue: hsl(223, 47%, 23%);
-  --component-width: 450px;
+  --component-width-desktop: 450px;
+  --component-width-mobile: 90vw;
   --font-size-p: 16px;
 }
 
@@ -16,7 +17,7 @@
 }
 
 body {
-  background-image: url("./images/pattern-background-desktop.svg");
+  background-image: url(./images/pattern-background-desktop.svg);
   background-size: 100vw 100vh;
   display: flex;
   flex-direction: column;
@@ -26,8 +27,7 @@ body {
 }
 
 main {
-  margin: 0 auto;
-  width: var(--component-width);
+  width: var(--component-width-desktop);
   background-color: white;
   text-align: center;
   border-radius: 25px;
@@ -36,7 +36,7 @@ main {
 }
 
 #hero-img {
-  width: var(--component-width);
+  width: var(--component-width-desktop);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
@@ -144,18 +144,50 @@ main {
 
 /* Active states */
 
-#plan-section a:hover {
+#plan-section a:hover,
+#button-proceed:hover {
   opacity: 75%;
   cursor: pointer;
   text-decoration: none;
 }
 
-#button-proceed:hover {
-  opacity: 75%;
-  cursor: pointer;
-}
-
 #button-cancel:hover {
   color: var(--dark-blue);
   cursor: pointer;
+}
+
+/* Mobile version */
+
+@media screen and (max-width: 600px) {
+  body {
+    background-image: url(./images/pattern-background-mobile.svg);
+  }
+  main {
+    width: var(--component-width-mobile);
+    margin: 20px auto;
+  }
+  #hero-img {
+    width: var(--component-width-mobile);
+  }
+  #content-section {
+    padding: 20px 10px;
+  }
+  #content-section h1 {
+    padding-top: 5px;
+    font-size: 22px;
+  }
+  #content-section p {
+    padding: 0px 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+  #plan-section {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  #button-cancel {
+    margin-top: 10px;
+  }
 }
