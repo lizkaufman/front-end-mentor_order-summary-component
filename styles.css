@@ -4,7 +4,7 @@
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
   --dark-blue: hsl(223, 47%, 23%);
-  --component-width: 500px;
+  --component-width: 450px;
   --font-size-p: 16px;
 }
 
@@ -140,4 +140,22 @@ main {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* Active states */
+
+#plan-section a:hover {
+  opacity: 75%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#button-proceed:hover {
+  opacity: 75%;
+  cursor: pointer;
+}
+
+#button-cancel:hover {
+  color: var(--dark-blue);
+  cursor: pointer;
 }
